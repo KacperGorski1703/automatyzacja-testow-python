@@ -1,21 +1,21 @@
 def if_palindrome(data):
     if type(data) != str:
-        print("Wrong data")
+        return(False)
     elif " " in data:
-        print("Wrong data")
+        return(False)
     elif data.isnumeric() == True :
-        print("Wrong data")
+        return(False)
     else:
         result = data[::-1].lower() == data.lower()
-        print(result)
+        return(result)
 
-if_palindrome("kajak")
-if_palindrome("kanapka")
-if_palindrome("Kajak")
-if_palindrome("kebab")
-if_palindrome("cIViC")
-if_palindrome(10)
+assert if_palindrome("kajak")
+assert not if_palindrome("kanapka")
+assert not if_palindrome("kebab")
+assert if_palindrome("cIViC")
+assert not if_palindrome(10)
+assert not if_palindrome("Kajak spada z przyczepy")
 list = ("kajak", "kanapka")
-if_palindrome(list)
-if_palindrome("Kajak spada z przyczepy")
-if_palindrome("123")
+assert not if_palindrome(list)
+assert not if_palindrome("123")
+
